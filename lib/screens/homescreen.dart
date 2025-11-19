@@ -1,3 +1,4 @@
+import 'package:dribble_ui/screens/ac_screen.dart';
 import 'package:dribble_ui/widgets/device_container.dart';
 import 'package:dribble_ui/widgets/room_container.dart';
 import 'package:flutter/material.dart';
@@ -104,9 +105,18 @@ class _HomescreenState extends State<Homescreen> {
                       model: deviceModel[0],
                       onSwitchedChange: (value) {},
                     ),
-                    DeviceContainer(
-                      model: deviceModel[1],
-                      onSwitchedChange: (value) {},
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const AcScreen(),
+                          ),
+                        );
+                      },
+                      child: DeviceContainer(
+                        model: deviceModel[1],
+                        onSwitchedChange: (value) {},
+                      ),
                     ),
                   ],
                 ),
